@@ -118,16 +118,11 @@ void alternateMergeLinkedList(LinkedList* ll1, LinkedList* ll2) {
     // 홀수일 때 끼워넣기 -> 이전 next 값 받아서 끼워넣는 노드 next 에 넣기
     if (idx1 % 2 == 1) {
       
-      // ll1 next 주소 -> 현재 노드 next
-      // 현재 노드 주소 -> ll1 next
       node = findNode(ll1, idx1 - 1);
-
       value = ll2->head->item;
 
-      // insert Node
       insertNode(ll1, idx1, value);
 
-      // ll2 첫 노드 삭제 
       removeNode(ll2, 0);
 	    size1 ++;
     }
