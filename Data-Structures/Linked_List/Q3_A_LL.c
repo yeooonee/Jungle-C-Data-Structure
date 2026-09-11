@@ -84,9 +84,25 @@ int main()
 
 //////////////////////////////////////////////////////////////////////////////////
 
+// index 값의 값이 계속 변하는데 어떻게 관리할지 고민 .. -> cnt 변수 따로 둠 
 void moveOddItemsToBack(LinkedList *ll)
 {
-	/* add your code here */
+	int i;
+	int len = ll->size;
+	ListNode *node;
+	int cnt = 0;
+
+	for (i = 0; i < len; i++){
+		node = findNode(ll,cnt);
+
+		if (node->item % 2 == 1){
+			insertNode(ll, ll->size , node->item);
+			removeNode(ll,cnt);
+		} else {
+			cnt ++;
+		}
+	}
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
