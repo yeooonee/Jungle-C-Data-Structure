@@ -105,9 +105,6 @@ int main() {
 // LinkedList2: 7
 
 void alternateMergeLinkedList(LinkedList* ll1, LinkedList* ll2) {
-  if (ll1 == NULL) return;
-  if (ll2 == NULL) return;
-
   int idx1, size1;
   size1 = ll1->size;
 
