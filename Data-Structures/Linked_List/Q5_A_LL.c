@@ -107,7 +107,12 @@ void frontBackSplitLinkedList(LinkedList *ll, LinkedList *resultFrontList, Linke
 	int i, j, len_criteria;
 	ListNode *node;
 
-	len_criteria = len / 2 + 1;
+	// len_criteria = len / 2 + 1; // ??
+	if (len % 2 != 0 ){
+		len_criteria = len / 2 + 1;
+	} else{
+		len_criteria = len / 2;
+	}
 	
 	// front list
 	for (i = 0; i < len_criteria; i++){
