@@ -96,7 +96,7 @@ void moveOddItemsToBack(LinkedList *ll)
 		node = findNode(ll,cnt);
 
 		if (node->item % 2 == 1){
-			insertNode(ll, ll->size , node->item);
+			insertNode(ll, len , node->item);
 			removeNode(ll,cnt);
 		} else {
 			cnt ++;
