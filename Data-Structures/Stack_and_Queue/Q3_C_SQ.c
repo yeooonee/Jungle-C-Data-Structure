@@ -101,26 +101,31 @@ int main()
 
 /////////////////////////////////////////////////////////////////////////////////
 
+int isOdd(int val){
+	if (val % 2 != 0){ // 홀수
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+
 int isStackPairwiseConsecutive(Stack *s)
 {
-	int i, val, len = s->ll.size, odd = 0, even = 0;
+	int i, val, val2, len = s->ll.size, odd = 0, even = 0, add;
 	
 	for (i = 0; i< len; i++){
 		val = pop(s);
-		
-		if (val % 2 == 0){ // 짝수일때
-			even ++;
-		} else {
-			odd ++;
-		}
-	}
+		val2 = pop(s);
 
-	if (even != odd){
-		return 0;
-	} else {
-		return 1;
-	}
-	
+		add = isOdd(val) + isOdd(val2);
+
+		if (add == 1){
+			return 1; 
+		} else{
+			return 0;
+		}
+	}	
 }
 
 //////////////////////////////////////////////////////////////////////////////////
