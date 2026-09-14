@@ -86,6 +86,10 @@ int main()
 
 ////////////////////////////////////////////////////////////////////////
 
+
+// 1. max 값 찾기
+// 2. Head 값을 바꿀때 어떤 값끼리 변경할지
+// 3. 이미 max 값이 head 일 때 어떻게 처리할지 
 int moveMaxToFront(ListNode **ptrHead)
 {
     ListNode *cur;
@@ -94,7 +98,6 @@ int moveMaxToFront(ListNode **ptrHead)
 	ListNode *prev = NULL;
 	ListNode *before_head, *before_max_next;
 	int idx, max_value;
-	// int len = (*ptrHead).
 	
 	max = *ptrHead; // 현재 head node 가 들어감 
 	max_value = (*max).item;
@@ -105,16 +108,14 @@ int moveMaxToFront(ListNode **ptrHead)
 	while (true){
 		// 더이상 갈 값이 때 현재 max 값 반환
 		if ((*cur).next == NULL){
-			if (prev){
+			if (prev){	// prev 가 있을때만
 
 				// Head 값 max 의 node 주소로 변경
 				before_head = *ptrHead; // head 의 주소 임시 변수에 저장
 				*ptrHead = max;
 
-				if (prev){
-					// prev 의 next 값 max 의 기존 next 로 변경 
-					prev->next = max->next;
-				}
+				// prev 의 next 값 max 의 기존 next 로 변경 
+				prev->next = max->next;
 
 				// max 의 next 주소 Head 값으로 변경
 				max->next = before_head;
