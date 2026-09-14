@@ -84,11 +84,25 @@ int main()
 }
 
 ////////////////////////////////////////////////////////////////////////
+ListNode *reverseHelper(ListNode *cur){
+
+	if (cur == NULL || (*cur).next == NULL){
+		return cur;
+	}
+
+	ListNode *rest;
+	rest = reverseHelper(cur->next);
+	cur->next->next = cur;
+	cur->next = NULL;
+
+	return rest;
+}
 
 void RecursiveReverse(ListNode **ptrHead)
 {
-	/* add your code here */
+	*ptrHead = reverseHelper(*ptrHead);
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////
 
