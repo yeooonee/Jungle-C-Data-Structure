@@ -136,9 +136,9 @@ void createQueueFromLinkedList(LinkedList *ll, Queue *q)
 
 void removeOddValues(Queue *q)
 {
-	int i, val;
+	int i, val, len = q->ll.size;
 
-	for (i = 0; i<q->ll.size; i++){
+	for (i = 0; i < len; i++){
 		val = dequeue(q);
 		if(val % 2 == 0){
 			enqueue(q, val);
