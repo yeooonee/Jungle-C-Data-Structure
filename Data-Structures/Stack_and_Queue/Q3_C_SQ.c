@@ -103,7 +103,24 @@ int main()
 
 int isStackPairwiseConsecutive(Stack *s)
 {
-  /* add your code here */
+	int i, val, len = s->ll.size, odd = 0, even = 0;
+	
+	for (i = 0; i< len; i++){
+		val = pop(s);
+		
+		if (val % 2 == 0){ // 짝수일때
+			even ++;
+		} else {
+			odd ++;
+		}
+	}
+
+	if (even != odd){
+		return 0;
+	} else {
+		return 1;
+	}
+	
 }
 
 //////////////////////////////////////////////////////////////////////////////////
