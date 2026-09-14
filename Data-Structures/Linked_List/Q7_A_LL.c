@@ -83,23 +83,25 @@ int main()
 	return 0;
 }
 
+// 재귀로 푸는 법 자체가 감이 안옴
 ////////////////////////////////////////////////////////////////////////
-ListNode *reverseHelper(ListNode *cur){
+ListNode *reverseHelper(ListNode *cur){ 
 
 	if (cur == NULL || (*cur).next == NULL){
 		return cur;
 	}
 
 	ListNode *rest;
-	rest = reverseHelper(cur->next);
-	cur->next->next = cur;
-	cur->next = NULL;
+	rest = reverseHelper(cur->next);	// 다음노드로 재귀 호출
+	cur->next->next = cur;				// 다음다음노드의 next 현재 주소로 변경
+	cur->next = NULL;					// 다음 노드 NULL 처리 (순환 오류 빌미 제거)
 
 	return rest;
 }
 
 void RecursiveReverse(ListNode **ptrHead)
 {
+	// *ptrHead = node 주소
 	*ptrHead = reverseHelper(*ptrHead);
 }
 
