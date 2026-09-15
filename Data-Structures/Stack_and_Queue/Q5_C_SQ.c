@@ -109,7 +109,16 @@ int main()
 
 void recursiveReverse(Queue *q)
 {
-/* add your code here */
+	int len = q->ll.size, i, val;
+
+	if (q->ll.size == 0){
+		return;
+	}
+
+	val = dequeue(q);	// 하위 재귀 함수를 타고 나서도 val 값이 보존이 될지? -> 보존됨
+	recursiveReverse(q);
+	enqueue(q, val);
+	
 }
 
 //////////////////////////////////////////////////////////////////
