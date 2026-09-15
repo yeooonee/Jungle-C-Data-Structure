@@ -109,7 +109,7 @@ int main()
 
 void recursiveReverse(Queue *q)
 {
-	int len = q->ll.size, i, val;
+	int val;
 
 	if (q->ll.size == 0){
 		return;
