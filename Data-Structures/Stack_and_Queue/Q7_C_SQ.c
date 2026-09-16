@@ -116,7 +116,7 @@ int balanced(char *expression)
 
 
 	while(true){
-		ch = *(expression + i); // 
+		ch = *(expression + i); // expression[i]
 
 		if (ch == '\0'){
 			break;
