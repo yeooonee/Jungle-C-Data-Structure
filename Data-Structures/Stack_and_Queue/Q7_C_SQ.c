@@ -106,7 +106,7 @@ int balanced(char *expression)
 {
 	// peek : 가장 첫 아이템 보여주기 
 	
-	Stack stack;
+	Stack stack; 
 	stack.ll.head = NULL;
 	stack.ll.size = 0;
 
@@ -116,7 +116,7 @@ int balanced(char *expression)
 
 
 	while(true){
-		ch = *(expression + i);
+		ch = *(expression + i); // 
 
 		if (ch == '\0'){
 			break;
