@@ -113,10 +113,32 @@ int main()
 
 //////////////////////////////////////////////////////////////////////////////////
 
-int identical(BTNode *tree1, BTNode *tree2)
+// 재귀의 첫 고민 -> 각 루트끼리 비교 -> left or right 로 이동함 
+int identical(BTNode *tree1, BTNode *tree2){
+    int val1, val2;
+    if (tree1 == NULL && tree2 == NULL) return 1;
+    if (tree1 == NULL || tree2 == NULL) return 0;
+    if (tree1->item != tree2->item){
+        return 0;
+    } 
 
-{
-   /* add your code here */
+    // left
+    val1 = identical(tree1->left, tree2->left);
+    if (val1 == 0) return 0;
+
+    // right
+    val2 = identical(tree1->right, tree2->right);
+
+    if (val1 + val2 == 2){
+        return 1;
+    } else{
+        return 0;
+    }
+
+    // return identical(tree1->left, tree2->left) && identical(tree1->right, tree2->right);
+    // 단락 평가
+    // if (p != NULL && p->item == 5)
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////
